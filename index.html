@@ -1,13 +1,199 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="./styles/styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.10.1/devicon.min.css">
+    <link rel="stylesheet" href="./assets/icofont/icofont/icofont.min.css">
+
+    <title>Olga SH</title>
 </head>
+
 <body>
-    <h1>Shine bright like a diamond</h1>
-    
+    <main>
+        <header>
+            <div id="particles-js">
+                <nav id="navigation">
+                    <label for="toggle"></label>
+                    <ul>
+                        <li><a href="#about"><span>about</span></a></li>
+                        <li><a href="#work"><span>work</span></a></li>
+                        <li><a href="#contact"> <span>contact</span></a></li>
+                    </ul>
+                </nav>
+                <h1><a href="#about">Let's create together</a></h1>
+
+            </div>
+        </header>
+
+        <section class="about" id="about">
+            <div class="wrapper"></div>
+            <div class="aboutContainer">
+                <div class="text">
+                    <h2>About</h2>
+                    <p>Hello! My name is Olga.</p>
+                    <p>I’m an enthusiastic and creative web-developer with hands-on skills and a passion to make a
+                        virtual environment more
+                        ergonomic. I aspire to combine different ideas, perspectives, and technologies to make the most
+                        customer-focused
+                        product.</p>
+
+                </div>
+                <div class="skills">
+                    <h2>Skills</h2>
+                    <ul class="icons">
+                        <li>
+                            <i class="devicon-javascript-plain"></i>
+                            <p>javascript</p>
+                        </li>
+                        <li>
+                            <i class="devicon-react-original"></i>
+                            <p>react</p>
+                        </li>
+                        <li>
+                            <i class="devicon-jquery-plain"></i>
+                            <p>jquery</p>
+                        </li>
+                        <li>
+                            <i class="devicon-firebase-plain"></i>
+                            <p>firebase</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-cogs"></i>
+                            <p>api</p>
+                        </li>
+                        <li>
+                            <div class="sass-css">
+                                <i class="devicon-sass-original"></i> <i class="devicon-css3-plain"></i>
+                            </div>
+                            <p>sass & css</p>
+                        </li>
+                        <li>
+                            <i class="devicon-git-plain"></i>
+                            <p>git & github</p>
+                        </li>
+                        <li>
+                            <i class="devicon-npm-original-wordmark"></i>
+                            <p>npm</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-universal-access"></i>
+                            <p>accessebility</p>
+                        </li>
+                        <li>
+                            <i class="icofont-responsive"></i>
+                            <p>responsive web design</p>
+                        </li>
+                        <li>
+                            <i class="icofont-people"></i>
+                            <p>team work</p>
+                        </li>
+                        <li>
+                            <i class="icofont-bug"></i>
+                            <p>debugging</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            </div>
+
+
+        </section>
+
+        <section class="work" id="work">
+            <div class="wrapper">
+                <h2>My work</h2>
+                <div class="projectsContainer">
+                    <div class="project movie">                        
+                        <div class="image-container">
+                            <img src="./assets/movie-generator.JPG" alt="Movie-generator application landing page.">
+                        </div>
+                        <div class="text">
+                            <h3 class="title">movie generator</h3>
+                            <p class="description">Select a genre of a movie you want to watch. The randomly generated
+                            movie, using TMDb API, has a trailer link and a link to similar movies.</p>
+                        <div class="links">
+                            <a href="https://jaime-olga.github.io/movie-generator/">LIVE |</a>
+                            <a href="https://github.com/Jaime-Olga/movie-generator">&nbspGITHUB</a>
+                        </div>
+                        </div>
+                        
+                    </div>
+                    <div class="project robo">                        
+                        <div class="image-container">
+                            <img src="./assets/robo-trivia.JPG" alt="Robo-trivia game landing page.">
+                        </div>
+                        <div class="text">
+                            <h3 class="title">robo-trivia</h3>
+                            <p class="description">Solo or Multiplayer trivia game with randomly generated questions
+                            from API. Each player has a unique avatar with game
+                            progress information. that is stored in Firebase.
+                        </p>
+                        <div class="links">
+                            <a href="https://robo-trivia-react.netlify.app/">LIVE |</a>
+                            <a href="https://github.com/robo-trivia-group/project-4-react">&nbspGITHUB</a>
+                        </div>
+                        </div>
+                        
+                        
+
+
+                    </div>
+                    <div class="project city">
+                        
+                        <div class="image-container">
+                            <img src="./assets/cities-to-visit.JPG"
+                                alt="The most beautiful cities application landing page.">
+                        </div>
+                        <div class="text">
+                            <h3 class="title">cities to visit</h3>
+                            <p class="description">Users are able to enjoy photos of the most beautiful cities from Unsplash
+                            API. If users want to visit a city later -
+                            they can add it to the list, which is stored in Firebase.
+                        </p>
+                        <div class="links">
+                            <a href="https://beautiful-cities-to-visit.netlify.app/">LIVE |</a>
+                            <a href="https://github.com/LolaShu/CITIES-to-VISIT">&nbspGITHUB</a>
+                        </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
+        </section>
+
+        <form name="contact" method="POST" id= "contact-form" data-netlify="true">
+            <p>
+                <label>Your Name: <input type="text" name="name" /></label>
+            </p>
+            <p>
+                <label>Your Email: <input type="email" name="email" /></label>
+            </p>            
+            <p>
+                <label>Message: <textarea name="message"></textarea></label>
+            </p>
+            <p>
+                <button type="submit">Send</button>
+            </p>
+        </form>
+        <div class="scroll-up">
+            <button id="scroll-btn" class="up-button" title="Back to Top" aria-label="Back to Top">
+                <i class="fas fa-arrow-alt-circle-up"></i>
+            </button>
+        </div>
+
+    </main>
+
+
+
+    <script src="https://kit.fontawesome.com/399494bc8f.js" crossorigin="anonymous"></script>
+    <script src="./script.js"></script>
+    <script src="./particles.js"></script>
+    <script src="./app.js"></script>
 </body>
+
 </html>
