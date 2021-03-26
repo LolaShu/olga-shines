@@ -1,0 +1,188 @@
+h2{
+        margin-left: 0;
+        margin-top: 0;
+        margin-bottom: 5%;
+    }
+    h2::before{
+        background-color: $projectColor;
+    }
+
+.formSection{    
+    padding: 5%;
+}
+
+.stayInTouch{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+
+    @include small-laptop{
+        flex-direction: column;
+    }
+}
+
+.contactForm{    
+    width: 50%;
+
+    @include small-laptop{
+        width: 100%;
+    }    
+    form{
+        margin: 0 auto;
+        width: 70%;
+        display: flex;
+        flex-direction: column; 
+
+        @include tablet{
+            width: 100%;
+        }
+
+        input[type=text],
+        input[type=email]{
+            width: 100%;
+            border: 2px solid $darkGreen;
+            font-family: $baseFont;
+            @include fluid-font-size(1.6rem, 3rem);
+            color: $darkGreen;
+            background-color: $lightGrey;
+            padding: 15px;
+            outline: none;
+            transition: all 0.2s ease-in-out;             
+        }
+
+        input::placeholder{
+            color: $darkGrey;
+            opacity: 0.8;
+        }
+        
+        input[type=text]{
+            border-top-left-radius: 15px;
+            border-top-right-radius: 15px;
+            border-bottom: 2px solid transparent;
+        } 
+
+        textarea{
+        border: 2px solid $darkGreen;
+        border-top: 2px solid transparent;
+        width:100%;
+        height:200px;
+        background-color: $lightGrey;
+        text-align: left;
+        padding:15px 15px;
+        margin-bottom: 30px;
+        font-family: $baseFont;
+        @include fluid-font-size(1.6rem, 3rem);
+        color: $darkGreen;
+        border-bottom-left-radius: 15px;
+        border-bottom-right-radius: 15px;
+        outline: none;
+        resize: none;  
+        transition: all 0.2s ease-in-out; 
+        
+        @include tablet{
+            margin-bottom: 15px;
+            }
+        }
+
+        textarea::placeholder{
+                color: $darkGrey;
+                opacity: 0.8;          
+            }
+
+    
+        input:focus,
+        input:hover,
+        textarea:hover,
+        textarea:focus{            
+            background-color: $projectColor;
+        }
+
+        button{
+            width: 100%;
+            @include fluid-font-size(1.6rem, 3rem);
+            background-color: $darkGrey;
+            color: $lightPeach;
+            font-weight: bold;
+            padding: 15px 15px;
+            outline: none;
+            border-radius: 15px;  
+            text-transform: uppercase;
+            border: 2px solid transparent;
+            transition: all 0.2s ease-in-out;  
+            cursor: pointer;
+            box-shadow: 3px 3px 3px $darkGrey;
+        }
+        button:hover,
+        button:focus {  
+            color: $lightGrey;
+            background-color:$darkGreen;        
+        }
+
+        button:active{
+        transform: translateY(4px);
+        }
+    }
+    
+}
+
+.contacts{    
+    width: 50%;
+    @include small-laptop{
+        width: 100%;
+        margin-top: 20px;
+        align-self: center;
+    }
+    ul{
+        width: 100%;
+        margin: 0 auto;
+    }
+    
+    li{
+        padding: 15px;
+        text-align: left;
+        @include small-laptop{
+        text-align: center;
+        padding: 5px;
+    }        
+
+        a{
+            @include fluid-font-size(1.6rem, 3rem);
+            text-decoration: none;
+            color: $darkGreen;            
+            position: relative;
+            transition: all 0.3s ease-in-out;              
+        }
+
+        a:hover::before,
+        a:focus::before{           
+                content: "";
+                background-color: $lightPeach;
+                width: 100%;
+                height: 30%;        
+                position: absolute;
+                left: 0%;
+                bottom: 5%;
+                z-index: -20;            
+        }
+    }
+}
+
+footer{
+    background-color: $darkGreen;
+    text-align: center;
+    p{
+        padding: 10px 30px;
+        color: $whiteColor;
+        @include fluid-font-size(1.6rem, 2rem);
+        @include animated-underline($lightPeach, 'span');
+        text-transform: lowercase;
+        font-weight: bold;
+        
+        a{
+            @include fluid-font-size(1.6rem, 2rem);
+            color: $lightPeach;
+            text-decoration: none;
+        }
+    }
+}

@@ -1,0 +1,120 @@
+nav{
+    opacity: 0;
+    margin: 0;    
+    position: fixed;
+    top: 0;
+    z-index: 100;
+    width: 100%;    
+    display: flex;
+    flex-direction: row-reverse;  
+    align-items: center; 
+    ul{
+        display: none;
+    }
+
+}
+
+.show{
+    background-color: $darkGreyOpacityNav;
+    ul{
+    display: flex;
+    flex-direction: row;
+    margin: 10px; 
+        li{
+        padding: 5px 10px;
+    }
+}
+}
+
+.onHeader{  
+    opacity: 1;  
+    ul{
+        @include animated-underline($whiteColor, 'span');  
+        a{
+        color: $whiteColor;
+        @include fluid-font-size(1.6rem,3rem);
+        text-decoration: none;
+        text-shadow: 1px 1px $darkGrey;        
+        font-weight: bold;         
+        }
+    } 
+}
+
+.onMain{
+    opacity: 1;
+    @include animated-underline($lightPeach, 'span');    
+    ul{        
+        a{
+        color: $lightPeach;
+        @include fluid-font-size(1.6rem,3rem);
+        text-decoration: none;
+        text-shadow: 1px 1px $darkGreen;        
+        font-weight: bold
+        }
+    }
+}
+
+.nav-icon {    
+    @include fluid-width-height(3rem,5rem);    
+    position: relative;
+    margin: 10px 20px 10px 10px;
+    padding: 0;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .5s ease-in-out;
+    -moz-transition: .5s ease-in-out;
+    -o-transition: .5s ease-in-out;
+    transition: .5s ease-in-out;
+    cursor: pointer;  
+}
+
+.nav-icon:hover,
+.nav-icon:focus{
+    transform: scale(1.2);
+}
+
+.nav-icon span {
+    display: block;
+    position: absolute;
+    height: 5px;
+    width: 100%;    
+    opacity: 1;
+    border-radius: 15px;    
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: .25s ease-in-out;
+    -moz-transition: .25s ease-in-out;
+    -o-transition: .25s ease-in-out;
+    transition: .25s ease-in-out;
+    box-shadow: 2px 2px 2px $darkGreen;
+}
+
+.nav-icon span:nth-child(1) {
+    top: 30%;    
+}
+
+.nav-icon span:nth-child(2) {
+    bottom: 30%;    
+}
+
+.nav-icon.open span:nth-child(1) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+    top: calc(50% - 2.5px);
+}
+
+.nav-icon.open span:nth-child(2),.nav-icon.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    bottom: calc(50% - 2.5px);
+}
+
+

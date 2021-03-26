@@ -1,90 +1,75 @@
 .work{
     margin: 0;
-    height: auto;
-    background-color: $lightGrey;
-    padding: 20px;
-    
+    height: auto;  
     
     h2{
-        @include fluid-font-size(2.5rem, 4rem);
-        display: inline-block;
-        color: $darkGrey;
-        margin: 2% auto;
-        text-align: left;        
+        margin: 5% 0 0 5%;        
+    }
+
+    h2::before{
+        background-color: $projectColor;
     }
 }
 
 .projectsContainer{
     height: auto;
-    margin: 2% auto;
+    margin: 0;
     display: flex;
     flex-direction: column;  
     justify-content: center;
     align-items: center;
+    padding: 5%; 
+    border-bottom: 2px solid $whiteColor;
     
-
-    .movie.image-container{
-        background-color: $projectMovieColor;        
-    }
-
-    .robo.image-container{
-        background-color: $projectRoboColor;        
-    }
-
-    .city.image-container{
-        background-color: $projectCityColor;         
-        
-        .image-container {            
-            border: 1px solid $blackColor;
-            box-shadow: 2px 2px 2px $blackColor;
-        }
-
-        .title{
-            color: $blackColor;
-        }
-
-    }
-
-    
-    .project {        
+    .project {    
+        position: relative;    
         display: flex;
         flex-direction: row;
         justify-content: center; 
         align-items: center;  
         height: 700px;
         background-color: $projectColor;
-        border-radius: 20px;
-        border: 1px solid blue;
-        margin: 20px auto;   
-        box-shadow: 5px 5px 5px $darkGreen;      
+        border: 2px solid $darkGreen;
+        border-radius: 15px;        
+        margin: 20px auto;
+        padding:20px;   
+        box-shadow: 5px 5px 5px $darkGreen; 
         
-
         .image-container {
-
         cursor: pointer;    
-        // padding:10px;       
-        // @include fluid-width(15rem, 40rem);
-        height: 100%;
+        height: 90%;
+        overflow: hidden;
         width: 50%;
-        margin: 20px;      
-        border: 1px solid green;
-        box-shadow: 2px 2px 2px $whiteColor;
-        transition: all .5s ease-in-out;
+        margin: 20px;
+        border: 2px solid $darkGrey;   
+        border-radius: 15px;        
+        box-shadow: 5px 5px 5px $darkGrey;
+        transition: all .2s ease-in-out;
 
             img {                
                 width: 100%;
                 height: 100%;
                 object-fit: cover;
-                // object-position: top;
-                // // filter: grayscale(100%);
-                // transform: translateX(-10%);
-                // transition: transform 0.2s ease-out;
-        }
+                transition: all .2s ease-in-out;
+                filter: grayscale(80%);
+            }
+        }    
+
+        .image-container:hover img,
+        .image-container:focus img{
+            transform: scale(1.1); 
+            filter: grayscale(0);          
         }
 
         .text{
             width: 40%;
-            .title {
+            padding: 10px 30px;
+
+            a{
+                text-decoration: none;
+                
+
+                .title {
                 @include fluid-font-size(2rem,4rem);
                 color: $darkGreen;       
                 pointer-events: none;
@@ -92,54 +77,90 @@
                 pointer-events: none;
                 white-space: nowrap;
                 text-transform: uppercase;
-                  text-shadow: 1px 1px 1px $darkPeach,
+                font-weight: bold;
+                text-shadow: 1px 1px 1px $darkPeach,
                             1px 2px 1px $darkPeach,
                             1px 3px 1px $darkPeach,
                             1px 4px 1px $darkPeach;
                 transition: all .2s ease-in-out;
-        }   
+                
+                }  
+            }
+            
+            
+            a:hover .title,
+            a:focus .title{
+                text-shadow: 1px 1px 1px $darkPeach,
+                            1px 2px 1px $darkPeach,
+                            1px 3px 1px $darkPeach,
+                            1px 4px 1px $darkPeach,
+                            1px 5px 1px $darkPeach,
+                            1px 6px 1px $darkPeach,
+                            1px 7px 1px $darkPeach,
+                            1px 8px 1px $darkPeach,
+                            1px 9px 1px $darkPeach,
+                            1px 10px 1px $darkPeach,
+            }
 
             .description{
             color: $darkGreen; 
             @include fluid-font-size(1.6rem,2.5rem); 
-        } 
+            } 
         }
-
-    
-
         
-        
-        
-        .links{
-            
-            width: 100%;
-         
-            text-align: right;
-            border-bottom: 1px solid $whiteColor;
+        .links{  
+            position: absolute;
+            top: -1.5%;
+            right: -1%;   
 
             a{
                 text-decoration: none;
-                @include fluid-font-size(1.6rem, 2.5rem);
-                color: $whiteColor;
+                @include fluid-font-size(4rem, 8rem);
+                color: $darkGreen;
                 padding: 10px 0;
                 font-weight: bold;
+                text-shadow: 2px 2px 2px $darkPeach;
+                transition: all .2s ease-in-out;
+            }
 
+            a:hover,
+            a:focus{
+                color: $darkGrey;
             }
         }
 
-    }    
+        @include small-laptop{
+            &{
+                flex-direction: column;                
+            }
 
-    // .image-container:hover img,
-    // .image-container:focus img{
-    //     transform: scale(1.5);
-               
-    // }
+            .image-container{
+                width: 90%;                
+            }
 
-    
+            .text{
+                width: 100%;            
+            }
+        }
 
+        @include small-phone{
+            &{
+                height: 500px;
+                padding: 10px;
+            }
+            
+            .image-container{
+                width: 90%; 
+                height: 50%;
+                margin-bottom: 0;
+            }
 
-
-
+            .text{
+                
+                padding: 10px;
+            }            
+        }
+    } 
 }
 
 

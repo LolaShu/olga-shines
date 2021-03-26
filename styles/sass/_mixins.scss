@@ -52,29 +52,6 @@
     }
 }
 
-//calculate width only
-@mixin fluid-width($min-size, $max-size, $min-vw: 30rem, $max-vw: 160rem) {
-    
-    $u1: unit($min-size);
-    $u2: unit($max-size);
-    $u3: unit($min-vw);
-    $u4: unit($max-vw);
-
-    @if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
-        & {
-            width: $min-size;            
-            @media (min-width: $min-vw) {
-                $fluid-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)}));
-                width: $fluid-size;
-            }
-            @media (min-width: $max-vw) {
-                width: $max-size;
-            }
-        }
-    }
-}
-
-
 
 //animated underline on hover
 @mixin animated-underline($color, $el) {
@@ -83,33 +60,11 @@
     }
     a:after {
         content: '';
-        height: 1.5px;
+        height: 2px;
         position: absolute;
-        bottom: -4px;
+        bottom: 0px;
         background: $color; 
         width: 0;
-        left: 50%;
-        transition: width 0.3s, left 0.3s;
-    }
-    #{$el}:hover a:after, #{$el}:focus a:after {
-        width: 100%;
-        left: 0;
-    }
-}
-
-
-//animated underline on hover
-@mixin line-through($color, $el) {
-    a {
-        position: relative;
-    }
-    a:after {
-        content: '';
-        height: 1.5px;
-        position: absolute;
-        bottom: 6px;
-        background: $color; 
-        width: 6px;
         left: 50%;
         transition: width 0.3s, left 0.3s;
     }

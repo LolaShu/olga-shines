@@ -1,70 +1,74 @@
-// const portfolio = {};
+const portfolio = {};
 
+//show the scroll up button
+portfolio.scrollUp = () => {
+    const scrollBtn = document.getElementById("scroll-btn");    
+    window.onscroll = function() { scrollFunction() };
 
+    function scrollFunction (){
+        if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+            scrollBtn.style.display = "block";
+        } else {
+            scrollBtn.style.display = "none";
+        }
+    }
 
-// //show the scroll up button
-// portfolio.scrollUp = () => {
-//     const scrollBtn = document.getElementById("scroll-btn");
-//     //when the user scrolls down 50px from the top of the document, show the button
-//     window.onscroll = function() { scrollFunction() };
+    function topFunction() {
+        document.body.scrollTop = 0;
+        document.documentElement.scrollTop = 0;
+    }
 
-//     function scrollFunction() {
-//         if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-//             scrollBtn.style.display = "block";
-//         } else {
-//             scrollBtn.style.display = "none";
-//         }
-//     }
+    scrollBtn.addEventListener("click", () => {
+        topFunction();
+    });
+}
 
-//     function topFunction() {
-//         document.body.scrollTop = 0;
-//         document.documentElement.scrollTop = 0;
-//     }
-
-//     scrollBtn.addEventListener("click", () => {
-//         topFunction();
-//     });
-// }
-
-// portfolio.navigation=()=>{
-//     const navElement = document.getElementById("navigation");
-//     window.onscroll = function() { navShowUp() };
-
-//     function navShowUp() {
-//         if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
-//             navElement.style.display = "block";
-//         } else {
-//             navElement.style.display = "none";
-//         }
-//     };    
-
-// }
-
-
-
-// document.querySelector("form").addEventListener("submit", handleSubmit);
-
-// const handleSubmit = (e) => {
-//   e.preventDefault()
-//   let myForm = document.getElementById('contact-form');
-//   let formData = new FormData(myForm)
-//   fetch('/', {
-//     method: 'POST',
-//     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-//     body: new URLSearchParams(formData).toString()
-//   }).then(() => console.log('Form successfully submitted')).catch((error) =>
-//     alert(error))
-// }
-
-
-// // //||||| initialize |||||
-// portfolio.init = () => {
+portfolio.colorChange=()=>{
     
-// //     //add scroll event listener and functionality
+    document.addEventListener("scroll", changeColor);
     
-//     portfolio.navigation();
-//     portfolio.scrollUp();
-// //     
-// };
+    function changeColor(){
 
-// portfolio.init();
+        const  scrollDistance = document.querySelector('header').offsetHeight;
+        const bars = document.getElementById("nav-icon");
+        const myNodelist = bars.querySelectorAll('span'); 
+
+        if (document.body.scrollTop > scrollDistance || document.documentElement.scrollTop > scrollDistance) {
+
+            document.querySelector("nav").classList.add('onMain');
+            document.querySelector("nav").classList.remove('onHeader');
+
+            for(let i=0; i<myNodelist.length; i++){
+                myNodelist[i].style.background ='#FFCB9A';
+            } 
+
+        }else {
+
+            document.querySelector("nav").classList.remove('onMain');
+            document.querySelector("nav").classList.add('onHeader'); 
+
+            for(let i=0; i<myNodelist.length; i++){
+                myNodelist[i].style.background='rgba(255, 255, 255, 0.75)';
+            } 
+
+        } 
+    }
+}
+
+// initializing
+portfolio.init = () => {
+    portfolio.scrollUp();
+    //add navigation event listener
+    const iconElement = document.getElementById('nav-icon');
+    const navElement = document.querySelector('nav');  
+    iconElement.addEventListener('click',function(){
+
+        this.classList.toggle('open');    
+        navElement.classList.toggle('show');
+    });
+
+    portfolio.colorChange();       
+};
+
+portfolio.init();
+

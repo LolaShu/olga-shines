@@ -8,26 +8,30 @@ $lightRose:#C96569;
 $moreLightPeach:#ffe5cd;
 $blackColor:#000000;
 $whiteColor:#ffffff;
-$projectCityColor:#fae3d2;
-$projectRoboColor:#042C4E;
-$projectMovieColor:#232323;
+$lightgreyOpacity:rgba(209, 232, 226, 0.7);
+$greenOpacity: rgba(17, 100, 102, 0.95);
+$darkroseOpacity:rgba(158, 90, 99, 1);
+$darkPeachOpacity:rgba(217, 176, 140, 0.9);
+$lightRoseOpacity:rgba(201, 101, 105, 1);
+$whiteOpacity:rgba(255, 255, 255, 0.8);
+// $lightPeachOpacity:rgba(63, 57, 51, 0.7);
+$darkGreyOpacityNav:rgba(49, 68, 85, 0.7);
+//colors for up-button
+$darkGreyOpacity:rgba(49, 68, 85, 0.4);
+$greenOpacityUpButton: rgba(17, 100, 102, 0.6);
+$projectColor:rgba(255, 203, 154, 0.6);
+//for skills li
+$whiteOpacityLi:rgba(255, 255, 255, 0.4);
+$lightPeachOpacityLi:rgba(251, 193, 139, 0.4);
+
+// for button
+$darkPeachButton: #ebac75;
+
+
+
+
+
 $headerFont:  'Rubik', sans-serif;
-$baseFont:'Poppins', sans-serif;;
+$baseFont:'Poppins', sans-serif;
 
-$projectColor:rgba(255, 203, 154, 0.71);
-// font-family: 'Work Sans', sans-serif;
 
-//    text-shadow: 1px 1px 1px $raspberryColor,
-//         1px 2px 1px $raspberryColor,
-//         1px 3px 1px $raspberryColor,
-//         1px 4px 1px $raspberryColor,
-//         1px 5px 1px $raspberryColor,
-//         1px 6px 1px $raspberryColor,
-//         1px 7px 1px $raspberryColor,
-//         1px 8px 1px $raspberryColor,
-//         1px 9px 1px $raspberryColor,
-//         1px 10px 1px $raspberryColor,
-//         1px 18px 6px $h1Shadow,
-//         1px 22px 10px $h1Shadow,
-//         1px 25px 35px $h1Shadow,
-//         1px 30px 60px $h1Shadow  
