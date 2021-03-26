@@ -226,6 +226,10 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+h2, a, button, p {
+  font-family: "Poppins", sans-serif;
+}
+
 h2 {
   display: inline-block;
   color: #116466;
