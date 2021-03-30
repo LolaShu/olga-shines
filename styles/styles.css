@@ -878,7 +878,8 @@ h1 a {
     width: 90%;
   }
   .projectsContainer .project .text {
-    width: 100%;
+    width: 90%;
+    padding: 10px;
   }
 }
 
