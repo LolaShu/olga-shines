@@ -336,25 +336,6 @@ h1 {
   z-index: 90;
 }
 
-h1 {
-  font-size: 9rem;
-  line-height: calc(9rem + 5px);
-}
-
-@media (min-width: 30rem) {
-  h1 {
-    font-size: calc(9rem + 3 * ((100vw - 30rem) / 130));
-    line-height: calc(calc(9rem + 3 * ((100vw - 30rem) / 130)) + 5px);
-  }
-}
-
-@media (min-width: 160rem) {
-  h1 {
-    font-size: 12rem;
-    line-height: calc(12rem + 5px);
-  }
-}
-
 h1 a {
   text-decoration: none;
   font-weight: bold;
@@ -377,15 +358,15 @@ h1 a {
 
 @media (min-width: 30rem) {
   h1 a {
-    font-size: calc(2rem + 8 * ((100vw - 30rem) / 130));
-    line-height: calc(calc(2rem + 8 * ((100vw - 30rem) / 130)) + 5px);
+    font-size: calc(2rem + 4.5 * ((100vw - 30rem) / 130));
+    line-height: calc(calc(2rem + 4.5 * ((100vw - 30rem) / 130)) + 5px);
   }
 }
 
 @media (min-width: 160rem) {
   h1 a {
-    font-size: 10rem;
-    line-height: calc(10rem + 5px);
+    font-size: 6.5rem;
+    line-height: calc(6.5rem + 5px);
   }
 }
 

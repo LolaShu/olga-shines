@@ -93,7 +93,6 @@ header{
 }
 
 h1{    
-    @include fluid-font-size(9rem, 12rem);    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -105,7 +104,7 @@ h1{
         text-decoration: none;
         font-weight: bold;
         text-transform: uppercase;        
-        @include fluid-font-size(2rem, 10rem);
+        @include fluid-font-size(2rem, 6.5rem);
         color:white;
         font-family: $headerFont;       
         display: inline-block; 
