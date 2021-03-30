@@ -93,7 +93,7 @@ header{
 }
 
 h1{    
-    @include fluid-font-size(9rem, 15rem);    
+    @include fluid-font-size(9rem, 12rem);    
     position: absolute;
     top: 50%;
     left: 50%;
@@ -172,7 +172,7 @@ h1{
             min-height: 9rem;
             width: calc(100% / 6);
             text-align: center;
-            margin: 15px 0; 
+            margin: 25px 0; 
 
             @include small-laptop{
                 width: calc(100% / 4);
