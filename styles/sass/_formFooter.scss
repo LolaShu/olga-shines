@@ -2,10 +2,7 @@ h2{
         margin-left: 0;
         margin-top: 0;
         margin-bottom: 5%;
-    }
-    h2::before{
-        background-color: $projectColor;
-    }
+    }    
 
 .formSection{    
     padding: 5%;
@@ -30,7 +27,7 @@ h2{
     }    
     form{
         margin: 0 auto;
-        width: 70%;
+        width: 100%;
         display: flex;
         flex-direction: column; 
 
@@ -59,12 +56,17 @@ h2{
         input[type=text]{
             border-top-left-radius: 15px;
             border-top-right-radius: 15px;
-            border-bottom: 2px solid transparent;
+            border-bottom: 1px solid $darkGreen;
         } 
+
+        input[type=email]{
+            border-bottom: 1px solid $darkGreen;
+            border-top: 1px solid $darkGreen;
+        }
 
         textarea{
         border: 2px solid $darkGreen;
-        border-top: 2px solid transparent;
+        border-top: 1px solid $darkGreen;
         width:100%;
         height:200px;
         background-color: $lightGrey;
@@ -127,11 +129,20 @@ h2{
 }
 
 .contacts{    
-    width: 50%;
+    width: calc(50% - 15%);
+    margin-left: 15%;
+
+    @include bigger-laptop{
+        width: calc(50% - 10%);
+        margin-left: 10%;
+    }
+    
     @include small-laptop{
+        display: inline-block;
         width: 100%;
-        margin-top: 20px;
+        margin-top: 30px;
         align-self: center;
+        margin-left: 0;
     }
     ul{
         width: 100%;
@@ -139,7 +150,7 @@ h2{
     }
     
     li{
-        padding: 15px;
+        padding: 15px 0;
         text-align: left;
         @include small-laptop{
         text-align: center;
@@ -147,23 +158,27 @@ h2{
     }        
 
         a{
-            @include fluid-font-size(1.6rem, 3rem);
+            @include fluid-font-size(1.6rem, 2.5rem);
             text-decoration: none;
             color: $darkGreen;            
             position: relative;
             transition: all 0.3s ease-in-out;              
         }
 
-        a:hover::before,
-        a:focus::before{           
+        a::before{
                 content: "";
-                background-color: $lightPeach;
-                width: 100%;
-                height: 30%;        
+                background-color: $projectColor;
+                width: 0%;
+                height: 40%;        
                 position: absolute;
                 left: 0%;
-                bottom: 5%;
-                z-index: -20;            
+                bottom: 0;
+                z-index: -20;
+        }
+
+        a:hover::before,
+        a:focus::before{           
+            animation: fullUnderline .8s forwards linear;            
         }
     }
 }
@@ -176,8 +191,7 @@ footer{
         color: $whiteColor;
         @include fluid-font-size(1.6rem, 2rem);
         @include animated-underline($lightPeach, 'span');
-        text-transform: lowercase;
-        font-weight: bold;
+        text-transform: lowercase;        
         
         a{
             @include fluid-font-size(1.6rem, 2rem);

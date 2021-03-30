@@ -2,6 +2,27 @@ html {
     font-size: 62.5%;
     font-family: 'Montserrat', sans-serif;
     scroll-behavior: smooth;
+    scrollbar-width:thin;
+    scrollbar-color: $darkGreen $lightGrey;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px; 
+}
+/* Track */
+::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px $darkGrey;    
+    // border-radius: 10px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: $darkGreen;
+    border-radius: 10px; 
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: $lightPeach; 
 }
 
 .wrapper {
@@ -22,7 +43,7 @@ body {
     font-family: $baseFont;
 }
 
-h2,a,button, p{
+h2,h3,h4,a,button, p{
     font-family: $baseFont
 }
 
@@ -37,13 +58,27 @@ h2{
 
 h2::before{
     content: "";
-    background-color: $whiteOpacity;
-    width: 100%;
-    height: 30%;        
+    background-color: $projectColor;
+    width: 0;
+    height: 40%;        
     position: absolute;
-    left: 0%;
-    bottom: 5%;
+    left: 0;
+    bottom: 0;
     z-index: -20;
+}
+
+@keyframes underline{
+    from{
+        width:0;
+    }
+
+    to{
+        width: 85%;
+    }
+}
+
+section.is-visible h2::before {
+    animation: underline 1s forwards linear;
 }
 
 header{    
@@ -58,14 +93,13 @@ header{
 }
 
 h1{    
-    @include fluid-font-size(8rem, 15rem);    
+    @include fluid-font-size(9rem, 15rem);    
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    padding: 20px;
     cursor: pointer;
-    z-index: 90;
+    z-index: 90;    
 
     a{
         text-decoration: none;
@@ -78,13 +112,14 @@ h1{
         mask-image: linear-gradient(-75deg, rgba(0,0,0,0.65) 30%, #000 50%, rgba(0,0,0,0.65) 70%);
         mask-size: 200%;
         animation: shine 2s linear infinite;
-    }
+    }   
 
     @keyframes shine {
         from { -webkit-mask-position: 150%; }
         to { -webkit-mask-position: -50%; }
     }
 }
+
 
 //about section style
 .about{
@@ -106,7 +141,7 @@ h1{
     }
 }
     
-.text{
+.textAbout{
     padding: 5%;
     height: auto;   
     border-bottom: 2px solid $whiteColor;                 
@@ -114,7 +149,8 @@ h1{
         font-family: $baseFont;
         @include fluid-font-size(1.6rem, 2rem);
         color: $darkGreen;
-        margin: 20px auto;
+        margin-top: 0;
+        margin-bottom: 20px;
     }
 }
 
@@ -126,33 +162,41 @@ h1{
     
     .icons{
         display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
+        flex-wrap: wrap;        
         align-items: center;
+        justify-content: center;
         li{
             position: relative;
             display: flex;
             flex-direction: column;
-            @include fluid-width-height(9rem, 12rem);                
+            min-height: 9rem;
+            width: calc(100% / 6);
             text-align: center;
-            margin: 15px; 
+            margin: 15px 0; 
+
+            @include small-laptop{
+                width: calc(100% / 4);
+            }
+
+            @include tablet{
+                width: calc(100% / 3);
+            }
         
             @include small-phone{
-                margin: 8px 4px;
+                margin: 15px 15px;
             }
                             
-                i{
-                    @include fluid-font-size(3rem, 4rem);
-                    color:$darkGreen;
-                
-                }      
+            i{
+                @include fluid-font-size(3rem, 4rem);
+                color:$darkGreen;               
+            }
 
-                p{
-                    @include fluid-font-size(1.6rem, 2rem);
-                    color: $darkGreen;
-                    margin-top: 15px;
-                    text-align: center;
-                }
+            p{
+                @include fluid-font-size(1.6rem, 2rem);
+                color: $darkGreen;
+                margin-top: 15px;
+                text-align: center;
+            }
         }
 
         .sass-css{
@@ -166,10 +210,10 @@ h1{
 
 //arrow to scroll to top of page
 .up-button {    
-    @include fluid-font-size(3rem, 6rem);
+    @include fluid-font-size(3rem, 5rem);
     display: none;
     position: fixed;
-    bottom: 40px;
+    bottom: 7%;
     right:1%;
     z-index: 99;
     cursor: pointer;
@@ -185,4 +229,15 @@ h1{
     background-color:  transparent;
     transform: scale(1.2);
     color: $greenOpacityUpButton;
+}
+
+
+@keyframes fullUnderline{
+from{
+    width:0;
+}
+
+to{
+    width: 100%;
+}
 }

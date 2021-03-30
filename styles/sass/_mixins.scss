@@ -74,6 +74,12 @@
     }
 }
 
+@mixin bigger-laptop{
+    @media(max-width:1150px){
+        @content;
+    }
+}
+
 @mixin small-laptop {
     @media (max-width: 1030px) {
         @content;
